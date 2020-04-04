@@ -1,0 +1,9 @@
+.ResultItem {
+    margin: 12px;
+    width: 400px;
+}
+
+.ResultItem:hover {
+    border: 1px solid rebeccapurple;
+    cursor: pointer;
+}
