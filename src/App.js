@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import ResultItem from './ResultItem';
 import FormSum from './FormSum';
 import FormSub from './FormSub';
-import ResultItem from './ResultItem';
+import FormMul from './FormMul';
 import FormDu from './FormDu';
-
 
 class App extends Component {
   constructor(props) {
@@ -38,18 +38,6 @@ class App extends Component {
     this.setState({ resultList: tempList });
   }
 
-handleModule(moduleState) {
-    console.log(Number(moduleState.termA) % Number(moduleState.termB));
-    var resTemp = Number(moduleState.termA) % Number(moduleState.termB);
-    var resultItem = {
-      exp: moduleState.termA + ' % ' + moduleState.termB + ' = ',
-      res: resTemp
-    };
-    let tempList = this.state.resultList;
-    tempList.unshift(resultItem);
-    this.setState({ resultList: tempList });
-  }
-
   handleSub(subState) {
     console.log(Number(subState.termA) - Number(subState.termB));
     var resTemp = Number(subState.termA) - Number(subState.termB);
@@ -63,17 +51,28 @@ handleModule(moduleState) {
   }
 
   handleMul(mulState) {
-    console.log(Number(addState.termA) * Number(addState.termB));
-    var resTemp = Number(addState.termA) * Number(addState.termB);
+    console.log(Number(mulState.termA) * Number(mulState.termB));
+    var resTemp = Number(mulState.termA) * Number(mulState.termB);
     var resultItem = {
-      exp: addState.termA + ' * ' + addState.termB + ' = ',
+      exp: mulState.termA + ' * ' + mulState.termB + ' = ',
       res: resTemp
     };
     let tempList = this.state.resultList;
     tempList.unshift(resultItem);
     this.setState({ resultList: tempList });
   }
- 
+
+  handleModule(moduleState) {
+    console.log(Number(moduleState.termA) % Number(moduleState.termB));
+    var resTemp = Number(moduleState.termA) % Number(moduleState.termB);
+    var resultItem = {
+      exp: moduleState.termA + ' % ' + moduleState.termB + ' = ',
+      res: resTemp
+    };
+    let tempList = this.state.resultList;
+    tempList.unshift(resultItem);
+    this.setState({ resultList: tempList });
+  }
   //TODO
   handleDiv(divState) { }
 
@@ -89,7 +88,8 @@ handleModule(moduleState) {
     ));
     return (
       <div className="App">
-        <FormSum doAdd={this.handleAdd} /> 
+        <h1> ⛩ Kid Calculator ⛩</h1>
+        <FormSum doAdd={this.handleAdd} />
         <FormSub doSub={this.handleSub} />
         <FormMul doMul={this.handleMul} />
         <FormDu doModule={this.handleModule} />

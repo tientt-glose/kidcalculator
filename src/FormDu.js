@@ -50,7 +50,7 @@ class FormDu extends Component {
                             </FormGroup>
                         </Col>
                         <Col md={4}>
-                            <Button type="module" color="primary" onClick={this.handleModule}>%</Button>
+                            <Button type="submit" color="primary" onClick={this.handleModule}>%</Button>
                         </Col>
                         <Col md={4}>
                             <FormGroup>
