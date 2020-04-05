@@ -10,7 +10,7 @@ class FormDu extends Component {
         }
         this.handleTermA = this.handleTermA.bind(this);
         this.handleTermB = this.handleTermB.bind(this);
-        this.handleModule = this.handleModule.bind(this);
+        this.handleDiv = this.handleDiv.bind(this);
     }
 
     handleTermA(event) {
@@ -50,7 +50,7 @@ class FormDu extends Component {
                             </FormGroup>
                         </Col>
                         <Col md={4}>
-                            <Button type="submit" color="primary" onClick={this.handleModule}>%</Button>
+                            <Button type="submit" color="primary" onClick={this.handleDiv}>'/'</Button>
                         </Col>
                         <Col md={4}>
                             <FormGroup>
