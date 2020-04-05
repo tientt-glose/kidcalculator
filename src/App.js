@@ -47,10 +47,21 @@ class App extends Component {
     tempList.unshift(resultItem);
     this.setState({ resultList: tempList });
   }
+
+  handleMul(mulState) {
+    console.log(Number(addState.termA) * Number(addState.termB));
+    var resTemp = Number(addState.termA) * Number(addState.termB);
+    var resultItem = {
+      exp: addState.termA + ' * ' + addState.termB + ' = ',
+      res: resTemp
+    };
+    let tempList = this.state.resultList;
+    tempList.unshift(resultItem);
+    this.setState({ resultList: tempList });
+  }
   
   //TODO
   handleDiv(divState) { }
-  handleMul(mulState) { }
   handleModule(moduleState) { }
 
 
@@ -67,6 +78,7 @@ class App extends Component {
       <div className="App">
         <FormSum doAdd={this.handleAdd} />
         <FormSub doSub={this.handleSub} />
+        <FormMul doMul={this.handleMul} />
         {/* Them may cai <Form...> vao day */}
         {resultList}
       </div>
