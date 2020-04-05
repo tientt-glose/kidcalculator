@@ -4,6 +4,8 @@ import './App.css';
 import FormSum from './FormSum';
 import FormSub from './FormSub';
 import ResultItem from './ResultItem';
+import FormDu from './FormDu';
+
 
 class App extends Component {
   constructor(props) {
@@ -36,6 +38,18 @@ class App extends Component {
     this.setState({ resultList: tempList });
   }
 
+handleModule(moduleState) {
+    console.log(Number(moduleState.termA) % Number(moduleState.termB));
+    var resTemp = Number(moduleState.termA) % Number(moduleState.termB);
+    var resultItem = {
+      exp: moduleState.termA + ' % ' + moduleState.termB + ' = ',
+      res: resTemp
+    };
+    let tempList = this.state.resultList;
+    tempList.unshift(resultItem);
+    this.setState({ resultList: tempList });
+  }
+
   handleSub(subState) {
     console.log(Number(subState.termA) - Number(subState.termB));
     var resTemp = Number(subState.termA) - Number(subState.termB);
@@ -59,10 +73,9 @@ class App extends Component {
     tempList.unshift(resultItem);
     this.setState({ resultList: tempList });
   }
-  
+ 
   //TODO
   handleDiv(divState) { }
-  handleModule(moduleState) { }
 
 
   render() {
@@ -76,9 +89,11 @@ class App extends Component {
     ));
     return (
       <div className="App">
-        <FormSum doAdd={this.handleAdd} />
+        <FormSum doAdd={this.handleAdd} /> 
         <FormSub doSub={this.handleSub} />
         <FormMul doMul={this.handleMul} />
+        <FormDu doModule={this.handleModule} />
+
         {/* Them may cai <Form...> vao day */}
         {resultList}
       </div>
