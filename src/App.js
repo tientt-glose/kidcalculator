@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import FormSum from './FormSum';
+import FormSub from './FormSub';
 import ResultItem from './ResultItem';
 
 class App extends Component {
@@ -35,8 +36,19 @@ class App extends Component {
     this.setState({ resultList: tempList });
   }
 
+  handleSub(subState) {
+    console.log(Number(subState.termA) - Number(subState.termB));
+    var resTemp = Number(subState.termA) - Number(subState.termB);
+    var resultItem = {
+      exp: subState.termA + ' - ' + subState.termB + ' = ',
+      res: resTemp
+    };
+    let tempList = this.state.resultList;
+    tempList.unshift(resultItem);
+    this.setState({ resultList: tempList });
+  }
+  
   //TODO
-  handleSub(subState) { }
   handleDiv(divState) { }
   handleMul(mulState) { }
   handleModule(moduleState) { }
@@ -54,6 +66,7 @@ class App extends Component {
     return (
       <div className="App">
         <FormSum doAdd={this.handleAdd} />
+        <FormSub doSub={this.handleSub} />
         {/* Them may cai <Form...> vao day */}
         {resultList}
       </div>
