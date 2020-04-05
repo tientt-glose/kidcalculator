@@ -27,6 +27,10 @@ class FormDu extends Component {
         }
         else if (this.state.termB === '0') {
             alert('ERROR!');
+            this.setState({
+                termA: '',
+                termB: ''
+            })
         }
         else {
             this.props.doModule(this.state);

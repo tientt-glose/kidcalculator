@@ -13,13 +13,13 @@
 
 ## Members ##
 
-|Name|Student ID|
-|----|----------|
-|Nguyễn Mạnh Tiến|20164069|
-|Trần Thị Thanh Huyền|20161914|
-|Nguyễn Diệu Linh|20162423
-|Nguyễn Phương Ngọc|20162952|
-|Lã Ngọc Dương|20165917|
+|氏名|Name|Student ID|
+|---|----|----------|
+|グエン・マイン・ティエン|Nguyễn Mạnh Tiến|20164069|
+|チャン・チ・テャン・フェン|Trần Thị Thanh Huyền|20161914|
+|グエン・ヅエウ・リン|Nguyễn Diệu Linh|20162423
+|グエン・フォン・ゴック|Nguyễn Phương Ngọc|20162952|
+|ラ・ゴック・ズオン|Lã Ngọc Dương|20165917|
 
 # **II. Homework** #
 
