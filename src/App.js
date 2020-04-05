@@ -103,7 +103,7 @@ class App extends Component {
         <FormSub doSub={this.handleSub} />
         <FormMul doMul={this.handleMul} />
         <FormDu doModule={this.handleModule} />
-
+        <FormDiv doDiv={this.handleDiv}/>
         {/* Them may cai <Form...> vao day */}
         {resultList}
       </div>
