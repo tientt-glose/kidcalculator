@@ -21,7 +21,7 @@ class FormDu extends Component {
         this.setState({ termB: event.target.value });
     }
 
-    handleModule(event) {
+    handleDiv(event) {
         if (this.state.termA === '' || this.state.termB === '') {
             alert('Please type a number!');
         }
