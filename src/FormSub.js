@@ -47,7 +47,7 @@ class FormSub extends Component {
                             </FormGroup>
                         </Col>
                         <Col md={4}>
-                            <Button type="submit" color="primary" onClick={this.handleSubmit}>+</Button>
+                            <Button type="submit" color="primary" onClick={this.handleSubmit}>-</Button>
                         </Col>
                         <Col md={4}>
                             <FormGroup>
