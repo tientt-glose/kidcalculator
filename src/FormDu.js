@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Row, Button, Form, FormGroup, Input } from 'reactstrap';
 
 class FormDu extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ class FormDu extends Component {
         if (this.state.termA === '' || this.state.termB === '') {
             alert('Please type a number!');
         }
-        if (this.state.termB === '0') {
+        else if (this.state.termB === '0') {
             alert('ERROR!');
         }
         else {

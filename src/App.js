@@ -6,6 +6,7 @@ import FormSum from './FormSum';
 import FormSub from './FormSub';
 import FormMul from './FormMul';
 import FormDu from './FormDu';
+import FormDiv from './FormDiv';
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class App extends Component {
     console.log(Number(addState.termA) + Number(addState.termB));
     var resTemp = Number(addState.termA) + Number(addState.termB);
     var resultItem = {
-      exp: addState.termA + ' + ' + addState.termB + ' = ',
+      exp: Number(addState.termA) + ' + ' + Number(addState.termB) + ' = ',
       res: resTemp
     };
     let tempList = this.state.resultList;
@@ -42,7 +43,7 @@ class App extends Component {
     console.log(Number(subState.termA) - Number(subState.termB));
     var resTemp = Number(subState.termA) - Number(subState.termB);
     var resultItem = {
-      exp: subState.termA + ' - ' + subState.termB + ' = ',
+      exp: Number(subState.termA) + ' - ' + Number(subState.termB) + ' = ',
       res: resTemp
     };
     let tempList = this.state.resultList;
@@ -54,7 +55,7 @@ class App extends Component {
     console.log(Number(mulState.termA) * Number(mulState.termB));
     var resTemp = Number(mulState.termA) * Number(mulState.termB);
     var resultItem = {
-      exp: mulState.termA + ' * ' + mulState.termB + ' = ',
+      exp: Number(mulState.termA) + ' * ' + Number(mulState.termB) + ' = ',
       res: resTemp
     };
     let tempList = this.state.resultList;
@@ -66,19 +67,7 @@ class App extends Component {
     console.log(Number(moduleState.termA) % Number(moduleState.termB));
     var resTemp = Number(moduleState.termA) % Number(moduleState.termB);
     var resultItem = {
-      exp: moduleState.termA + ' % ' + moduleState.termB + ' = ',
-      res: resTemp
-    };
-    let tempList = this.state.resultList;
-    tempList.unshift(resultItem);
-    this.setState({ resultList: tempList });
-  }
-  //TODO
-  handleDiv(divState) { 
-  console.log(Number(divState.termA) / Number(divState.termB));
-    var resTemp = Number(divState.termA) / Number(divState.termB);
-    var resultItem = {
-      exp: divState.termA + ' / ' + divState.termB + ' = ',
+      exp: Number(moduleState.termA) + ' % ' + Number(moduleState.termB) + ' = ',
       res: resTemp
     };
     let tempList = this.state.resultList;
@@ -86,6 +75,17 @@ class App extends Component {
     this.setState({ resultList: tempList });
   }
 
+  handleDiv(divState) { 
+  console.log(Number(divState.termA) / Number(divState.termB));
+    var resTemp = Number(divState.termA) / Number(divState.termB);
+    var resultItem = {
+      exp: Number(divState.termA) + ' / ' + Number(divState.termB) + ' = ',
+      res: resTemp
+    };
+    let tempList = this.state.resultList;
+    tempList.unshift(resultItem);
+    this.setState({ resultList: tempList });
+  }
 
   render() {
     var resultList = this.state.resultList.map((item, id) => (
@@ -104,7 +104,6 @@ class App extends Component {
         <FormMul doMul={this.handleMul} />
         <FormDu doModule={this.handleModule} />
         <FormDiv doDiv={this.handleDiv}/>
-        {/* Them may cai <Form...> vao day */}
         {resultList}
       </div>
     );
