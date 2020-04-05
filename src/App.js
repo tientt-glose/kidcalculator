@@ -74,7 +74,17 @@ class App extends Component {
     this.setState({ resultList: tempList });
   }
   //TODO
-  handleDiv(divState) { }
+  handleDiv(divState) { 
+  console.log(Number(divState.termA) / Number(divState.termB));
+    var resTemp = Number(divState.termA) / Number(divState.termB);
+    var resultItem = {
+      exp: divState.termA + ' / ' + divState.termB + ' = ',
+      res: resTemp
+    };
+    let tempList = this.state.resultList;
+    tempList.unshift(resultItem);
+    this.setState({ resultList: tempList });
+  }
 
 
   render() {
@@ -93,7 +103,7 @@ class App extends Component {
         <FormSub doSub={this.handleSub} />
         <FormMul doMul={this.handleMul} />
         <FormDu doModule={this.handleModule} />
-
+        <FormDiv doDiv={this.handleDiv}/>
         {/* Them may cai <Form...> vao day */}
         {resultList}
       </div>
