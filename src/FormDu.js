@@ -10,7 +10,7 @@ class FormDu extends Component {
         }
         this.handleTermA = this.handleTermA.bind(this);
         this.handleTermB = this.handleTermB.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleModule = this.handleModule.bind(this);
     }
 
     handleTermA(event) {
@@ -21,12 +21,15 @@ class FormDu extends Component {
         this.setState({ termB: event.target.value });
     }
 
-    handleSubmit(event) {
+    handleModule(event) {
         if (this.state.termA === '' || this.state.termB === '') {
             alert('Please type a number!');
         }
+        if (this.state.termB === '0') {
+            alert('ERROR!');
+        }
         else {
-            this.props.doAdd(this.state);
+            this.props.doModule(this.state);
             this.setState({
                 termA: '',
                 termB: ''
@@ -47,7 +50,7 @@ class FormDu extends Component {
                             </FormGroup>
                         </Col>
                         <Col md={4}>
-                            <Button type="submit" color="primary" onClick={this.handleSubmit}>%</Button>
+                            <Button type="module" color="primary" onClick={this.handleModule}>%</Button>
                         </Col>
                         <Col md={4}>
                             <FormGroup>
